@@ -1,0 +1,220 @@
+*{
+    box-sizing: border-box;
+    margin:0px;
+    padding: 0px;
+}
+
+#map{
+    height: 500px;
+}
+#iniSesion{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    background-color: antiquewhite;
+    padding: 2rem;
+    max-width: 500px;
+    width: 100%;
+    border-radius: 1rem;
+}
+
+.addArtista{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    background-color: antiquewhite;
+    padding: 2rem;
+    max-width: 700px;
+    width: 100%;
+    border-radius: 1rem;
+}
+
+.registro{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    background-color: antiquewhite;
+    padding: 2rem;
+    max-width: 700px;
+    width: 100%;
+    border-radius: 1rem;
+}
+
+.form-width{
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+
+
+input[type="submit"]{
+    width: 100%;
+}
+
+.error{
+    color:red;
+    font-weight: bold;
+}
+
+.img{
+    max-height: 100px;
+    width: auto;
+    object-fit: cover;
+    margin-left: 5px;
+}
+
+.imgPortada{
+    max-height:300px;
+    width: auto;
+    object-fit: cover;
+}
+
+/* .imgConciertoCambiar{
+    height: 100px;
+    width: 100px;
+} */
+
+/* #container{
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+} */
+
+.imgConcierto{
+    max-width:100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.tamaImg{
+    max-width:100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* .w-25{
+    width:25% !important;
+} */
+.ocultar{
+    display: none;
+}
+
+.mostrar{
+    display: block;
+}
+
+body{
+    background-image: url("../imagenes/pexels-wendy-wei-1190298.png");
+    background-position: center;
+}
+
+
+h2,h1,h3,h4,h5{
+    font-family: 'Titan One', cursive;
+    font-size: 2.5rem !important;
+    color: #031556;
+}
+
+P{
+    font-family: Roboto, sans-serif;
+    font-size: 1.3rem;
+    color: #141414;
+}
+
+a{
+    color: #031556;
+    text-decoration: none;
+    font-size: 1rem !important;
+    font-family: Verona, sans-serif;
+}
+
+.linkNav{
+    color: white !important;
+}
+
+legend{
+    color: #031556 !important;
+}
+
+label{
+    font-size: 1.35rem !important;
+    color: #031556;
+}
+
+button{
+    
+    color: white !important;
+}
+
+th{
+    color:#031556 !important;
+}
+
+td{
+    font-size: 1.0rem;
+    color: white;
+}
+
+.nav-link{
+    color: #031556 !important;
+}
+
+.ligh{
+    color: white !important;
+}
+
+footer{
+    margin-top: 2em;
+    padding-top: 2em;
+}
+
+.infConcierto{
+   width: 100%;
+   max-width: 100%;
+}
+
+.infConciertoP > p{
+    font-weight: bold;
+}
+
+.infConciertoP  label{
+    font-weight: bold;
+}
+
+
+
+ /* Carousel base class */
+ .carousel {
+    margin-bottom: 4rem;
+    height: auto;
+  }
+  /* Since positioning the image, we need to help out the caption */
+  .carousel-caption {
+    bottom: 3rem;
+    z-index: 10;
+  }
+  
+  /* Declare heights because of positioning of img element */
+  .carousel-item {
+    height: 80vh;
+  }
+  .carousel-item > img {
+    top: 0;
+    left: 0;
+    max-width: 100%;
+    width: 100%;
+  }
+
+
+ 
+
+
+ 
+
+
+  
+
+
+

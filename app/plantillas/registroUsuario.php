@@ -1,54 +1,96 @@
 <?php ob_start();?>
-<fieldset>
-    <div>
-        <legend>Cuenta</legend>
-        <form action="" method="post">
-            <label for="">Email <input type="email" name="email" id="" value=""></label><br>
-            <label for="">Contraseña <input type="password" name="password" id="" value=""  pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\W).{8,16}" required></label><br>
-            <label for="">Confirmar Contraseña <input type="password" name="passwordConfirm" id="" value=""></label>
-        </form>
-    </div>
-</fieldset>
-<fieldset>
-    <div>
-        <legend>Detalles Personales</legend>
-        <form action="" method="post">
-            <label for="">Nombre <input type="text" name="nombre" id="" value=""></label>
-            <label for="">Primer Apellido <input type="text" name="apellido" id="" value=""></label>
-            <label for="">Segundo Apellido <input type="text" name="segundoApellido" id="" value=""></label><br>
-            <label for="">Calle <input type="text" name="calle" maxlength="40" id="" value=""></label>
-            <label for="">Numero <input type="number" name="numPortal"  id="" value=""></label>
-            <label for="">Piso <input type="text" name="piso" maxlength="40" id="" value=""></label><br>
-            <label for="">Codigo Postal <input type="text" name="numPortal" autocomplete="codigoPostal"></label>
-            <label for="">Ciudad <input type="text" name="ciudad" maxlength="40" id="" value=""></label></label>
-            <label for="">Edad <input type="number" name="edad" id="" min="18" maxlength=""></label>
-            <label for="">Telefono Movil <input type="text" name="telefonoMovil" maxlength="9" id="" value=""></label>
-        </form>
-    </div>
-    <div>
-        <legend>Genero</legend>
-        <input type="radio" name="genero" value="" id="genero-hombre">
-        <label for="" class="radio">Hombre</label>
-        <input type="radio" name="genero" value="" id="genero-mujer">
-        <label for="" class="radio">Mujer</label>
-    </div>
-    <div>
-        <legend>Generos musicales que te gusten</legend>
-        <ul>
-            <li>
-                <input type="checkbox" name="gustosMusicales" id="" class="" value=""><label for="">Electronica</label>
-            </li>
-            <li>
-                <input type="checkbox" name="gustosMusicales" id="" class="" value=""><label for="">Rock</label>
-            </li>
-            <li>
-                <input type="checkbox" name="gustosMusicales" id="" class="" value=""><label for="">Pop</label>
-            </li>
-            <li>
-                <input type="checkbox" name="gustosMusicales" id="" class="" value=""><label for="">Reggaeton </label>
-            </li>
-        </ul>
-    </div>
-</fieldset>
+        <form action="" method="post" class="form-width registro">
+        <legend class="text-center my-3">Cuenta</legend>
+        <div class="row mx-3">
+            <div class="mb-3 col-md-6 col-12 text-center">
+                    <label for="email" class="form-label">Correo Electrónico:</label>
+                    <input type="email" class="form-control" id="email" name="email" value="<?=isset(($_POST['email']))?$_POST['email']:''?>">
+                
+                <div class="error text-center mt-2">
+                    <?=isset($errores["email"])?$errores["email"]:''?>
+                </div>
+            </div>
+
+                <div class="mb-3 col-md-6 col-12 text-center">
+                    <label for="password" class="form-label ">Contraseña:</label>
+                    <input type="password" class="form-control" id="password" name="pass" value="">
+                
+                    <div class="error text-center mt-2">
+                        <?=isset($errores["pass"])?$errores["pass"]:''?>
+                    </div>
+                </div>
+        </div>
+            
+        <legend class="text-center my-3">Detalles Personales</legend>
+        <div class="row mx-3">
+            <div class="mb-3 col-md-4 col-12 text-center">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="" name="nombre" value="<?=isset($datosUsuario[0]['nombre'])?$datosUsuario[0]['nombre'] : ''?>">
+            
+                <div class="error text-center mt-2">
+                    <?=isset($errores["nombre"])?$errores["nombre"]:''?>
+                </div>
+            </div>
+            <div class="mb-3 col-md-4 col-12 text-center">
+                <label for="primerApellido" class="form-label">Primer Apellido</label>
+                <input type="text" class="form-control" id="" name="primerApellido" value="<?=isset($datosUsuario[0]['primerApellido'])?$datosUsuario[0]['primerApellido'] : ''?>">
+           
+                <div class="error text-center mt-2">
+                    <?=isset($errores["primerApellido"])?$errores["primerApellido"]:''?>
+                </div>
+            </div>
+            <div class="mb-3 col-md-4 col-12 text-center">
+                <label for="segundoApellido" class="form-label">Segundo Apellido</label>
+                <input type="text" class="form-control" id="" name="segundoApellido" value="<?=isset($datosUsuario[0]['segundoApellido'])?$datosUsuario[0]['segundoApellido'] : ''?>">
+            
+                <div class="error text-center mt-2">
+                    <?=isset($errores["segundoApellido"])?$errores["segundoApellido"]:''?>
+                </div>
+            </div>
+        </div>
+        <div class="row mx-3">
+            <div class="mb-3 col-md-6 col-12 text-center">
+                <label for="docIdentificacion" class="form-label">Documento de Identidad </label>
+                <input type="text" class="form-control" id="" name="docIdentificacion" value="<?=isset($datosUsuario[0]['docIdentificacion'])?$datosUsuario[0]['docIdentificacion'] : ''?>">
+            
+                <div class="error text-center mt-2">
+                    <?=isset($errores["docIdentificacion"])?$errores["docIdentificacion"]:''?>
+                </div>
+            </div>
+            <div class="mb-3 col-md-6 col-12 text-center">
+                <label for="fechaNacimiento" class="form-label">Fecha Nacimiento </label>
+                <input type="date" class="form-control" id="" name="fechaNacimiento" value="<?=isset($datosUsuario[0]['fechaNacimiento'])?$datosUsuario[0]['fechaNacimiento'] : ''?>">
+                <div class="error text-center mt-2">
+                    <?=isset($errores["fechaNacimiento"])?$errores["fechaNacimiento"]:''?>
+                </div>
+            </div>
+        </div>
+        <div class="row mx-3">
+            <div class="mb-3 col-md-6 col-12 text-center">
+                <label for="telefonoMovil" class="form-label">Telefono Movil </label>
+                <input type="text" class="form-control" id="" name="telefonoMovil" value="<?=isset($datosUsuario[0]['telefonoMovil'])?$datosUsuario[0]['telefonoMovil'] : ''?>">
+            
+                <div class="error text-center mt-2">
+                    <?=isset($errores["telefonoMovil"])?$errores["telefonoMovil"]:''?>
+                </div>
+            </div>
+            <div class="mb-3 col-md-6 col-12 mx-3">
+                <label for="genero-hombre" class="form-label">Genero</label><br>
+                <input type="radio" name="genero" value="Masculino" id="genero-hombre" checked>
+                <label for="" class="radio">Hombre</label>
+                <input type="radio" name="genero" value="Femenino" id="genero-mujer">
+                <label for="" class="radio">Mujer</label>
+                <div class="error text-center mt-2">
+                    <?=isset($errores["genero"])?$errores["genero"]:''?>
+                </div>   
+            </div>
+        </div>  
+        <div class="mb-3 mx-3">
+            <input type="submit" class="btn btn-primary mb-3" value="Registro" name="Registro">
+        </div>        
+        <div class="mb-3 error">
+                    <?=isset($errores["usuarioCorrecto"])?$errores["usuarioCorrecto"]:''?>
+        </div>
+    </form>
 <?php $contenido = ob_get_clean();?>
 <?php include 'base.php';?>

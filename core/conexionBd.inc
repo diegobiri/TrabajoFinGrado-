@@ -9,12 +9,17 @@ class ConexionBd
   public function __construct()
   { $params = (new Configuracion())->getDbParams();
 
+  $dsn = 'mysql:dbname=conciertoslarioja;host=localhost;port=3306';
+  $usuario = "root";
+  $password = "";
+
     try
-    { $this->con = new PDO("sqlsrv:server={$params['server']},{$params['port']};
-                            Database={$params['database']}",
-                           $params['user'], $params['pass']);
-      $this->con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    }catch(PDOException $ex)
+    { /*$this->con = new \PDO("mysql:host={$params['server']},{$params['port']};
+                            dbname={$params['dbname']}",
+                           $params['user'], $params['pass']);*/
+        $this->con = new \PDO($dsn,$usuario,$password);
+      $this->con->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+    }catch(\PDOException $ex)
     { die("Error de conexión ".$ex->getMessage());
     }
   }
